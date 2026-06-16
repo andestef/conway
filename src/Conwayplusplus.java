@@ -168,6 +168,7 @@ public class Conwayplusplus extends Application {
     }
     public void makeConwayScreen(Stage stage){
         GridPane root = new GridPane();
+        root.setAlignment(Pos.TOP_CENTER);
         cellDisplays = new ArrayList<ArrayList<button>>();
         cells = new ArrayList<ArrayList<cell>>();
         int x = 0;
