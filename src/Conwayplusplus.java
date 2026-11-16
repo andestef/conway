@@ -48,6 +48,7 @@ public class Conwayplusplus extends Application {
     int cellsizeY;
     Button sim;
     Button oneGen;
+    Button clearAll;
     //Label moneys;
     Button placeCells;
     Button placeWalls;
@@ -139,7 +140,7 @@ public class Conwayplusplus extends Application {
         if (ppn){
         simGen();
         try{
-        Thread.sleep(500);
+        Thread.sleep(250);
         }
         catch(InterruptedException e){
              
@@ -200,13 +201,22 @@ public class Conwayplusplus extends Application {
         ppn = false;
         sim = new Button("Play");
         oneGen = new Button("+1 Generation");
+        clearAll = new Button("Clear");
         root.add(sim,x,0);
         root.add(oneGen,x,1);
+        root.add(clearAll,x,2);
         oneGen.setOnAction(event -> {
             simGen();
         });
         sim.setOnAction(event->{
             pp(sim);
+        });
+        clearAll.setOnAction(event->{
+            for(int xv=0;xv<sizeX;xv++){
+            for(int yv=0;yv<sizeY;yv++){
+                updateCell(xv,yv,1);
+            }
+            }
         });
         stage.setScene(new Scene(root));
         stage.setMaximized(true);
@@ -220,11 +230,6 @@ public class Conwayplusplus extends Application {
         sizeX = 25;
         sizeY = 25;
         //root.setAlignment(Pos.CENTER); 
-        stage.setScene(new Scene(root));
-        root.setFocusTraversable(true);
-        root.requestFocus();
-        stage.setMaximized(true);
-        stage.show();
         makeConwayScreen(stage);
     }
 }

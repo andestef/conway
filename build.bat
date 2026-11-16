@@ -9,6 +9,8 @@ del "conwayplusplus.exe"
 "launch4j/launch4jc" conf.xml
 del "Conwayplusplus.class"
 del "Conwayplusplus$1.class"
+del "Conwayplusplus$button.class"
+del "Conwayplusplus$cell.class"
 del "Conwayplusplus.jar"
 conwayplusplus
 cd ../
