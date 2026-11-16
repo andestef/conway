@@ -1,3 +1,3 @@
-# Conway++
+# Conway
 
 Alex is prettty cool
